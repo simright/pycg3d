@@ -3,7 +3,7 @@ import math
 import unittest
 
 from pycg3d.point import Point
-from pycg3d.plane import PlaneBy3Points, PlaneByPointNormal
+from pycg3d.plane import PlaneBy3Points
 
 from pycg3d import utils
 
