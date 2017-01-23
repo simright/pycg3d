@@ -38,6 +38,12 @@ class TestVector(unittest.TestCase):
         self.assertEqual(Vector(1.0, 0.0, 0.0).cross_product(Vector(0.0, 1.0, 0.0)), Vector(0.0, 0.0, 1.0))
 
     def test_normalize(self):
-        self.assertEqual(Vector(10.0, 0.0, 0.0).normalize(), Vector(1.0, 0.0, 0.0))
-        self.assertEqual(Vector(0.0, -2.0, 0.0).normalize(), Vector(0.0, -1.0, 0.0))
-        self.assertEqual(Vector(0.0, 0.0, 5.0).normalize(), Vector(0.0, 0.0, 1.0))
+        inputs = [
+            [Vector(10.0, 0.0, 0.0), Vector(1.0, 0.0, 0.0)],
+            [Vector(0.0, -2.0, 0.0), Vector(0.0, -1.0, 0.0)],
+            [Vector(0.0, 0.0, 5.0),  Vector(0.0, 0.0, 1.0)],
+        ]
+
+        for v1, v2 in inputs:
+            v1.normalize()
+            self.assertEqual(v1, v2)
