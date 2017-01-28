@@ -12,7 +12,7 @@ class Line2p(Line):
     """
     def __init__(self, p1, p2):
         assert isinstance(p1, Point)
-        assert isinstance(p2, point)
+        assert isinstance(p2, Point)
         super(Line2p, self).__init__()
         self._p1 = p1
         self._p2 = p2
