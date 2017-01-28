@@ -54,6 +54,9 @@ class CG3dVector(object):
             self[0]*other[1]-other[0]*self[1]
         )
 
+    def transform(self, tf):
+        return tf.applyto(self)
+
     __add__ = add            # overload operator '+'
     __sub__ = sub            # overload operator '-'
     __mul__ = dot_product    # overload operator '*'
