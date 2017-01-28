@@ -1,7 +1,7 @@
 import math
 
 
-class Vector(object):
+class CG3dVector(object):
     def __init__(self, x, y, z):
         self._data = [x, y, z]
 
@@ -19,10 +19,10 @@ class Vector(object):
         return self[0] == other[0] and self[1] == other[1] and self[2] == other[2]
 
     def add(self, other):
-        return Vector(self[0]+other[0], self[1]+other[1], self[2]+other[2])
+        return CG3dVector(self[0] + other[0], self[1] + other[1], self[2] + other[2])
 
     def sub(self, other):
-        return Vector(self[0]-other[0], self[1]-other[1], self[2]-other[2])
+        return CG3dVector(self[0] - other[0], self[1] - other[1], self[2] - other[2])
 
     def dot_product(self, other):
         return self[0] * other[0] + self[1] * other[1] + self[2] * other[2]
@@ -31,7 +31,7 @@ class Vector(object):
         """
         scale
         """
-        return Vector(f*self[0], f*self[1], f*self[2])
+        return CG3dVector(f * self[0], f * self[1], f * self[2])
 
     def scale(self, f):
         self._data[0] *= f
@@ -48,7 +48,7 @@ class Vector(object):
         self._data[2] /= l
 
     def cross_product(self, other):
-        return Vector(
+        return CG3dVector(
             self[1]*other[2]-other[1]*self[2],
             self[2]*other[0]-other[2]*self[0],
             self[0]*other[1]-other[0]*self[1]
