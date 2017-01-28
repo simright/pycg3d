@@ -1,5 +1,4 @@
 from pycg3d import cg3d_plane
-from pycg3d import cg3d_point
 
 
 class CG3dTransformer(object):
