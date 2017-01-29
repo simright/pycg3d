@@ -18,10 +18,6 @@ class TestVector(unittest.TestCase):
         self.assertEqual(CG3dVector(1.0, 0.0, 6.0) - CG3dVector(2.0, 3.0, 4.0), CG3dVector(-1.0, -3.0, 2.0))
         self.assertEqual(CG3dVector(1.0, 0.0, 6.0).sub(CG3dVector(2.0, 3.0, 4.0)), CG3dVector(-1.0, -3.0, 2.0))
 
-    def test_dot_product(self):
-        self.assertEqual(CG3dVector(1.0, -1.0, 6.0) * CG3dVector(2.0, 3.0, 4.0), 23.0)
-        self.assertEqual(CG3dVector(1.0, -1.0, 6.0).dot_product(CG3dVector(2.0, 3.0, 4.0)), 23.0)
-
     def test_left_multiple(self):
         self.assertEqual(2.0 * CG3dVector(1.0, 2.0, 3.0), CG3dVector(2.0, 4.0, 6.0))
 
@@ -33,9 +29,19 @@ class TestVector(unittest.TestCase):
     def test_length(self):
         self.assertEqual(CG3dVector(1.0, 2.0, 3.0).length(), math.sqrt(14.0))
 
+    def test_dot_product(self):
+        self.assertEqual(CG3dVector(1.0, -1.0, 6.0) * CG3dVector(2.0, 3.0, 4.0), 23.0)
+        self.assertEqual(CG3dVector(1.0, -1.0, 6.0).dot_product(CG3dVector(2.0, 3.0, 4.0)), 23.0)
+
     def test_cross_product(self):
-        self.assertEqual(CG3dVector(1.0, 0.0, 0.0) ^ CG3dVector(0.0, 1.0, 0.0), CG3dVector(0.0, 0.0, 1.0))
-        self.assertEqual(CG3dVector(1.0, 0.0, 0.0).cross_product(CG3dVector(0.0, 1.0, 0.0)), CG3dVector(0.0, 0.0, 1.0))
+        self.assertEqual(
+            CG3dVector(1.0, 0.0, 0.0) ^ CG3dVector(0.0, 1.0, 0.0),
+            CG3dVector(0.0, 0.0, 1.0)
+        )
+        self.assertEqual(
+            CG3dVector(1.0, 0.0, 0.0).cross_product(CG3dVector(0.0, 1.0, 0.0)),
+            CG3dVector(0.0, 0.0, 1.0)
+        )
 
     def test_normalize(self):
         inputs = [

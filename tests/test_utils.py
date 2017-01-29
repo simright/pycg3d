@@ -6,8 +6,8 @@ from pycg3d import utils
 
 
 class TestUtils(unittest.TestCase):
-    def test_dis2p(self):
+    def test_distance(self):
         self.assertEqual(
-            utils.dist2p(CG3dPoint(1.0, 2.0, 3.0), CG3dPoint(4.0, 1.0, 2.0)),
+            utils.distance(CG3dPoint(1.0, 2.0, 3.0), CG3dPoint(4.0, 1.0, 2.0)),
             math.sqrt(11.0)
         )

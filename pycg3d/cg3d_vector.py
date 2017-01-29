@@ -24,9 +24,6 @@ class CG3dVector(object):
     def sub(self, other):
         return CG3dVector(self[0] - other[0], self[1] - other[1], self[2] - other[2])
 
-    def dot_product(self, other):
-        return self[0] * other[0] + self[1] * other[1] + self[2] * other[2]
-
     def __rmul__(self, f):
         """
         scale
@@ -47,17 +44,23 @@ class CG3dVector(object):
         self._data[1] /= l
         self._data[2] /= l
 
+    def distance(self, other):
+        return math.sqrt((self[0]-other[0])**2 + (self[1]-other[1])**2 + (self[2]-other[2])**2)
+
+    def dot_product(self, other):
+        return self[0] * other[0] + self[1] * other[1] + self[2] * other[2]
+
     def cross_product(self, other):
         return CG3dVector(
-            self[1]*other[2]-other[1]*self[2],
-            self[2]*other[0]-other[2]*self[0],
-            self[0]*other[1]-other[0]*self[1]
+            self[1] * other[2] - other[1] * self[2],
+            self[2] * other[0] - other[2] * self[0],
+            self[0] * other[1] - other[0] * self[1]
         )
 
     def transform(self, tf):
         return tf.applyto(self)
 
-    __add__ = add            # overload operator '+'
-    __sub__ = sub            # overload operator '-'
+    __add__ = add     # overload operator '+'
+    __sub__ = sub     # overload operator '-'
     __mul__ = dot_product    # overload operator '*'
     __xor__ = cross_product  # overload operator '^'
