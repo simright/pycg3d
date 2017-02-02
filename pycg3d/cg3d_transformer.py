@@ -68,3 +68,18 @@ class CG3dTranslateTF(CG3dTransformer):
 
     def applyto(self, point):
         return point + self.get_dv()
+
+
+class CG3dXtranslateTF(CG3dTranslateTF):
+    def __init__(self, tx, cords=None):
+        super(CG3dXtranslateTF, self).__init__(tx=tx, ords=cords)
+
+
+class CG3dYtranslateTF(CG3dTranslateTF):
+    def __init__(self, ty, cords=None):
+        super(CG3dYtranslateTF, self).__init__(ty=ty, cords=cords)
+
+
+class CG3dZtranslateTF(CG3dTranslateTF):
+    def __init__(self, tz, cords=None):
+        super(CG3dZtranslateTF, self).__init__(tz=tz, cords=cords)
