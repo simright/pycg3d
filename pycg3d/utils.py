@@ -1,5 +1,4 @@
 import math
-from pycg3d import cg3d_point
 from pycg3d import cg3d_vector
 from pycg3d import cg3d_plane
 

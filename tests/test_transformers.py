@@ -17,3 +17,11 @@ class TestTransformers(unittest.TestCase):
         p2 = p1.transform(mirror)
 
         self.assertEqual(p2, CG3dPoint(-1.0, 0.0, 0.0))
+
+    def test_rotate(self):
+        tf = cg3d_transformer.CG3dZrotateTF(90.0)
+        p1 = CG3dPoint(1.0, 0.0, 0.0)
+        p2 = p1.transform(tf)
+        self.assertAlmostEqual(p2[0], 0.0)
+        self.assertAlmostEqual(p2[1], 1.0)
+        self.assertAlmostEqual(p2[2], 0.0)
