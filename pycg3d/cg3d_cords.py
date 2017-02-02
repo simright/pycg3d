@@ -6,6 +6,22 @@ class CG3dCordsBase(object):
     def __init__(self):
         pass
 
+    @property
+    def origin(self):
+        raise NotImplementedError
+
+    @property
+    def ex(self):
+        raise NotImplementedError
+
+    @property
+    def ey(self):
+        raise NotImplementedError
+
+    @property
+    def ez(self):
+        raise NotImplementedError
+
 
 class CG3dRectCords(CG3dCordsBase):
     def __init__(
@@ -36,8 +52,12 @@ class CG3dRectCords(CG3dCordsBase):
         """
         self._origin = origin
         self._ex = self.fix_cords(origin, ex, ey, ez, px, py, pz, pxy, pyz, pzx)
-        self._ey = self.fix_cords(origin, self._ex, ey, ez, px, py, pz, pxy, pyz, pzx)
-        self._ez = self.fix_cords(origin, self._ex, self._ey, ez, px, py, pz, pxy, pyz, pzx)
+        self._ey = self.fix_cords(origin, ey, ez, self._ex, py, pz, px, pyz, pzx, pxy)
+        self._ez = self.fix_cords(origin, ez, self._ex, self._ey, pz, px, py, pzx, pxy, pyz)
+
+        self._ex.nornalize()
+        self._ey.normalize()
+        self._ez.normalize()
 
     def fix_cords(self, origin, e1, e2, e3, p1, p2, p3, p12, p23, p31):
         """
@@ -78,6 +98,10 @@ class CG3dRectCords(CG3dCordsBase):
             return self.fix_cords(origin, e1, p2-origin, e3, p1, p2, p3, p12, p23, p31)
         else:
             raise ValueError
+
+    @property
+    def origin(self):
+        return self._origin
 
     @property
     def ex(self):
