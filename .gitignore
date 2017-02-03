@@ -1,4 +1,8 @@
 *.pyc
 .idea/
+build/
+dist/
+pycg3d.egg-info/
+
 
 
