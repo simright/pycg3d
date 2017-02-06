@@ -15,6 +15,9 @@ class CG3dVector(object):
     def __getitem__(self, i):
         return self._data[i]
 
+    def __setitem__(self, key, value):
+        self._data[key] = value
+
     def __eq__(self, other):
         return self[0] == other[0] and self[1] == other[1] and self[2] == other[2]
 
