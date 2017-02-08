@@ -67,7 +67,7 @@ Quick start
     >>> print va*vb
     2.0
 
-  - '^' operator can be used for cross product of vectors
+  - '^' operator for cross product of vectors
 
     >>> vx = CG3dVector(1.0, 0.0, 0.0)
     >>> vy = CG3dVector(0.0, 1.0, 0.0)
