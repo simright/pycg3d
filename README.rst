@@ -1,28 +1,27 @@
-pycg3d - a pure python package for Computational Geometry in 3D
-===============================================================
+**pycg3d** - *a pure python package for Computational Geometry in 3D*
 
 ----------
 Functions
 ----------
-- Classes for modeling *Point*, *Vector*, *Line*, *Plane* in 3D space;
-- Functions and operators for vectors: *addition*, *subtraction*, *dot product*, *cross product* etc;
-- Classes for modeling transformations like translation, rotation, reflection(mirror) etc, which could be chained and applied to *Point*;
-- Utility functions;
+- Classes for modeling *Point*, *Vector*, *Line*, *Plane* in 3D space
+- Functions and operators for vectors: *addition*, *subtraction*, *dot product*, *cross product* etc
+- Classes for modeling transformations like translation, rotation, reflection(mirror) etc, which could be chained and applied to *Point*
+- Utility functions
 
 -----------
 Highlights
 -----------
-- Pure python;
-- Minimal dependency;
-- Friendly operators for building expressions(e.g. '+','-','*','^' operators for vectors);
-- No graphics;
+- Pure python
+- Minimal dependency
+- Friendly operators for building expressions(e.g. '+', '-', '*' and '^' operators for vectors)
+- No graphics
 
 -------------
 Installation
 -------------
-  ::
+ ::
 
-  > pip install pycg3d
+ > pip install pycg3d
 
 -----------
 Quick start
