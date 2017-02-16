@@ -1,4 +1,4 @@
-**pycg3d** - a pure **py**\thon package for **C**\omputational **G**\eometry in **3D**
+**pycg3d** - a pure **Py**\thon package for **C**\omputational **G**\eometry in **3D**
 
 -------------
 Requirements
