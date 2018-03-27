@@ -53,3 +53,7 @@ class TestVector(unittest.TestCase):
         for v1, v2 in inputs:
             v1.normalize()
             self.assertEqual(v1, v2)
+
+
+if __name__ == "__main__":
+    unittest.main()

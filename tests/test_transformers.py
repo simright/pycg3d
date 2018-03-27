@@ -26,3 +26,7 @@ class TestTransformers(unittest.TestCase):
         self.assertAlmostEqual(p2[0], 0.0)
         self.assertAlmostEqual(p2[1], 1.0)
         self.assertAlmostEqual(p2[2], 0.0)
+
+
+if __name__ == "__main__":
+    unittest.main()
