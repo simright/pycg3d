@@ -11,3 +11,7 @@ class TestUtils(unittest.TestCase):
             utils.distance(CG3dPoint(1.0, 2.0, 3.0), CG3dPoint(4.0, 1.0, 2.0)),
             math.sqrt(11.0)
         )
+
+
+if __name__ == "__main__":
+    unittest.main()
