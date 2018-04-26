@@ -3,6 +3,10 @@ from pycg3d import cg3d_vector
 from pycg3d import cg3d_plane
 
 
+def vlength(v):
+    return math.sqrt(v[0]**2 + v[1]**2 + v[2]**2)
+
+
 def distance(p1, p2):
     """
     compute distance between two points
@@ -48,3 +52,13 @@ def mirror_point_to_plane(point, plane):
     pn, norm = plane.get_point_and_normal()
     norm.normalize()
     return point - 2.0 * ((point - pn) * norm) * norm
+
+
+def compute_angle_v2v(v1, v2):
+    """
+    compute angle between two vectors, measured in radians within [0, pi]
+    :param v1: Vector 1
+    :param v2: Vector 2
+    :return: angle between Vectors v1 and v2, measured in radians within [0, pi]
+    """
+    return math.acos(dot_product(v1, v2) / (vlength(v1)*vlength(v2)))
