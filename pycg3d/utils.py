@@ -56,13 +56,13 @@ def mirror_point_to_plane(point, plane):
 
 def compute_angle_v2v(v1, v2, v3=None):
     """
-    compute angle between two vectors, measured in radians within [0, pi] if v3 is not provided
-    measured in radians within [-pi, pi] if v3 is provided
+    compute angle between two vectors, measured in radians within [0, pi) if v3 is not provided
+    measured in radians within [0, 2*pi) if v3 is provided
     :param v1: Vector 1
     :param v2: Vector 2
     :param v3: Vector 3. User-defined normal direction of the plane that the v1 and v2 are lied on
-    :return: angle between Vectors v1 and v2, measured in radians within [0, pi] if v3 is not provided
-                                                measured in radians within [-pi, pi] if v3 is provided
+    :return: angle between Vectors v1 and v2, measured in radians within [0, pi) if v3 is not provided
+                                                measured in radians within [0, 2*pi) if v3 is provided
     """
 
     alpha = math.acos(dot_product(v1, v2) / (vlength(v1)*vlength(v2)))
