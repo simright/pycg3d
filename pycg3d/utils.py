@@ -54,11 +54,31 @@ def mirror_point_to_plane(point, plane):
     return point - 2.0 * ((point - pn) * norm) * norm
 
 
-def compute_angle_v2v(v1, v2):
+def compute_angle_v2v(v1, v2, v3=None):
     """
-    compute angle between two vectors, measured in radians within [0, pi]
+    compute angle between two vectors, measured in radians within [0, pi] if v3 is not provided
+    measured in radians within [-pi, pi] if v3 is provided
     :param v1: Vector 1
     :param v2: Vector 2
-    :return: angle between Vectors v1 and v2, measured in radians within [0, pi]
+    :param v3: Vector 3. User-defined normal direction of the plane that the v1 and v2 are lied on
+    :return: angle between Vectors v1 and v2, measured in radians within [0, pi] if v3 is not provided
+                                                measured in radians within [-pi, pi] if v3 is provided
     """
-    return math.acos(dot_product(v1, v2) / (vlength(v1)*vlength(v2)))
+
+    alpha = math.acos(dot_product(v1, v2) / (vlength(v1)*vlength(v2)))
+    if v3 is not None:
+        cross = cross_product(v2, v1)
+        if dot_product(cross,v3) > 0.0:
+            return 2*math.pi-alpha
+
+    return alpha
+
+
+if __name__ == '__main__':
+    a = [1.0, 1.0, 0.0]
+    b = [1.0, -1.0, 0.0]
+    c = [0.0, 0.0, 1.0]
+    print(math.degrees(compute_angle_v2v(a,b)))
+    print(math.degrees(compute_angle_v2v(a,b,c)))
+    print(math.degrees(compute_angle_v2v(b, a, c)))
+    print(compute_angle_v2v([1.0, 0.0, 0.0],[-1.0, 1.0, 0.0],[0.0,0.0,1.0]))
