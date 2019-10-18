@@ -56,12 +56,12 @@ def mirror_point_to_plane(point, plane):
 
 def compute_angle_v2v(v1, v2, v3=None):
     """
-    compute angle between two vectors, measured in radians within [0, pi) if v3 is not provided
+    compute angle between two vectors, measured in radians within [0, pi] if v3 is not provided
     measured in radians within [0, 2*pi) if v3 is provided
     :param v1: Vector 1
     :param v2: Vector 2
     :param v3: Vector 3. User-defined direction that is used to define if the angle is bigger than pi
-    :return: angle between Vectors v1 and v2, measured in radians within [0, pi) if v3 is not provided
+    :return: angle between Vectors v1 and v2, measured in radians within [0, pi] if v3 is not provided
                                                 measured in radians within [0, 2*pi) if v3 is provided
     """
 
