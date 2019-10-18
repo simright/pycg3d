@@ -36,6 +36,24 @@ class TestUtils(unittest.TestCase):
             0.75*math.pi
         )
 
+        self.assertEqual(
+            utils.compute_angle_v2v(
+                [1.0, 0.0, 0.0],
+                [-1.0, 1.0, 0.0],
+                [0.0, 0.0, 1.0]
+            ),
+            0.75 * math.pi
+        )
+
+        self.assertEqual(
+            utils.compute_angle_v2v(
+                [1.0, 0.0, 0.0],
+                [-1.0, 1.0, 0.0],
+                [0.0, 0.0, -1.0]
+            ),
+            1.25 * math.pi
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
